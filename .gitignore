@@ -4,6 +4,7 @@
 junk/
 foobar/
 _drafts/
+_localdump/
 
 # try to prevent the inclusion of credentials
 creds/
