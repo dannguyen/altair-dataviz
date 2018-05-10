@@ -1,4 +1,4 @@
-year,month,decimal_date,average_ppm,interpolated_ppm,trend_ppm,days
+year,month,decimal_date,average,interpolated,trend,days
 1958,3,1958.208,315.71,315.71,314.62,
 1958,4,1958.292,317.45,317.45,315.29,
 1958,5,1958.375,317.50,317.50,314.71,

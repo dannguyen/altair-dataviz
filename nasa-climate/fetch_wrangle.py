@@ -35,15 +35,15 @@ DATASETS = {
 
     'co2': {
         'url': 'ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_mm_mlo.txt',
-        'headers': ('year', 'month', 'decimal_date', 'average_ppm',
-                   'interpolated_ppm', 'trend_ppm', 'days'),
+        'headers': ('year', 'month', 'decimal_date', 'average',
+                   'interpolated', 'trend', 'days'),
         'pattern':  re.compile(
                        r'^(?P<year>\d{4})\s+'
                        r'(?P<month>\d{1,2})\s+'
                        r'(?P<decimal_date>\d{4}\.\d{3})\s+'
-                       r'(?P<average_ppm>-?\d+\.\d+)\s+'
-                       r'(?P<interpolated_ppm>\d+\.\d+)\s+'
-                       r'(?P<trend_ppm>\d+\.\d+)\s+'
+                       r'(?P<average>-?\d+\.\d+)\s+'
+                       r'(?P<interpolated>\d+\.\d+)\s+'
+                       r'(?P<trend>\d+\.\d+)\s+'
                        r'(?P<days>-?\d+)\s*$'),
 
     },
@@ -95,8 +95,8 @@ def main():
                 records.append(d)
                 # co2 data needs special processing
                 if dname == 'co2':
-                    if d['average_ppm'] == '-99.99':
-                        d['average_ppm'] = None
+                    if d['average'] == '-99.99':
+                        d['average'] = None
                     if d['days'] == '-1':
                         d['days'] = None
 
